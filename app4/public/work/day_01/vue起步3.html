@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap 101 Template</title>
+  <style>
+    [v-clock]{
+      display:none
+    }
+  </style>
+</head>
+<body>
+<!--功能: 显示信息列表-->
+<!--
+  1. 在data中初始数组数据
+  2. 在页面中遍历显示: v-for
+  3. 避免页面闪现表达式文本
+    指令: v-text
+    指令: v-cloak
+    样式: [v-cloak] { display: none }
+
+   数据:  [
+            {id : 1, name : '吃饭'},
+            {id : 2, name : '睡觉'},
+            {id : 3, name : '打豆豆'}
+          ]
+-->
+  <div id="app-3">
+    <!--<input type="text" v-model="id">-&#45;&#45;-->
+    <!--<input type="text" v-model="name">-&#45;&#45;-->
+    <!--<input type="text" v-model="age">-->
+    <!--<button>新增</button>-->
+
+    <ul v-cloak="">
+      <li v-for="todo in todos">
+        <!--<span v-text="todo.text"></span>-->
+        {{todo.id}}--{{todo.name}}
+        <button @click="deleteTodo($index)">删除</button>
+      </li>
+    </ul>
+  </div>
+  <script type="text/javascript" src="../vue/dist/vue.js"></script>
+  <script type="text/javascript">
+      var app3=new Vue({
+        el: '#app-3',
+        data: {
+          todos: [
+            {id:1,name: '吃饭'},
+            {id:2,name: '睡觉'},
+            {id:3,name:'打豆豆'}
+          ]
+        },
+        methods: {
+          deleteTodo(index) {
+            this.todos.splice(index, 1)
+          }
+        }
+      })
+  </script>
+
+
+
+</body>
+</html>

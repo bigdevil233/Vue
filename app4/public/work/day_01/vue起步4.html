@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap 101 Template</title>
+</head>
+<body>
+  <div id="app-4">
+    <h1>{{msg}}</h1>
+    <button @click="change">切换</button>
+  </div>
+  <script type="text/javascript" src="../vue/dist/vue.js"></script>
+  <script type="text/javascript">
+      new Vue({
+        el:'#app-4',
+        data:{
+          msg:'Hello Vue.js!'
+        },
+        methods:{
+          change(){
+            this.msg=this.msg.split('').reverse().join('');
+          }
+        }
+      })
+
+
+  </script>
+</body>
+</html>
